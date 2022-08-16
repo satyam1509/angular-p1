@@ -6,6 +6,7 @@
         <th>TITLE</th>
         <th>AUTHOR</th>
         <th>CONTENT</th>
+        <th>TITLE WORDCOUNT</th>
         <th>ACTION</th>
       </tr>
     </thead>
@@ -14,7 +15,8 @@
          <td>{{ Data.id }}</td>
         <td>{{ Data.title | uppercase}}</td>
         <td>{{ Data.author }}</td>
-        <td>{{ Data.content }}</td>
+        <td>{{ Data.content}}</td>
+        <td>{{Data.content |wordcount}}</td>
         <td> 
           <a routerLink="edit/{{Data.id}}" class="btn btn-primary btn-block" >Edit</a>
           &nbsp;&nbsp;<button class="btn btn-primary btn-block" (click)="deletedata(Data.id)">Delete</button>

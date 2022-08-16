@@ -8,6 +8,8 @@ import { DataTransferService } from 'src/app/data-transfer.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+
+  
   constructor(public dts: DataTransferService) {}
 
   ngOnInit(): void {}

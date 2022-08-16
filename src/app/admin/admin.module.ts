@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import { WordcountPipe } from '../wordcount.pipe';
 
 
 
@@ -14,6 +15,7 @@ import { EditComponent } from './edit/edit.component';
     DashboardComponent,
     CreateComponent,
     EditComponent,
+    WordcountPipe
 
     
   ],
