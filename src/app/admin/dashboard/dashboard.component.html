@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>CONTENT</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Data of dts.data">
+         <td>{{ Data.id }}</td>
+        <td>{{ Data.title | uppercase}}</td>
+        <td>{{ Data.author }}</td>
+        <td>{{ Data.content }}</td>
+        <td> 
+          <a routerLink="edit/{{Data.id}}" class="btn btn-primary btn-block" >Edit</a>
+          &nbsp;&nbsp;<button class="btn btn-primary btn-block" (click)="deletedata(Data.id)">Delete</button>
+        </td> 
+        </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary btn-block" routerLink="/create">Add Data</button>
+</div>
