@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
     // console.log({username:this.username,
     //   password:this.password});
     console.log('login clicked');
-    this.http
-      .post('https://ai-lab-backend.herokuapp.com/api/v1/auth/login', {
+    this.http.post('https://ai-lab-backend.herokuapp.com/api/v1/auth/login', {
         username: 'patel1996satyam@gmail.com',
         password: 'Pass@1234',
       })
