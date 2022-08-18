@@ -1,6 +1,7 @@
-import { JsonPipe } from '@angular/common';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -9,23 +10,31 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginform: any;
+  
   username:string="";
   password:string="";
+  
+  loginform = new FormGroup({
+  email:new FormControl('',[Validators.required,Validators.email]),
+  password:new FormControl('',[Validators.required])
+})
+
   constructor(private http: HttpClient,private router:Router,private route: ActivatedRoute) {}
 
   ngOnInit(): void {
 
-    console.log(this.username);
+    // console.log(this.username);
   }
+
 
   login() {
     // console.log({username:this.username,
     //   password:this.password});
-    console.log('login clicked');
+    console.log('login clicked!!!');
+ 
     this.http.post('https://ai-lab-backend.herokuapp.com/api/v1/auth/login', {
-        username: 'patel1996satyam@gmail.com',
-        password: 'Pass@1234',
+        username: this.loginform.value.email,
+        password: this.loginform.value.password
       })
       .subscribe({
         next: (response) => {

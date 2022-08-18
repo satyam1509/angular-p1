@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 // import { Data } from 'src/app/data';
 import { DataTransferService } from 'src/app/services/data-transfer.service';
 
@@ -10,7 +11,7 @@ import { DataTransferService } from 'src/app/services/data-transfer.service';
 export class DashboardComponent implements OnInit {
 
   
-  constructor(public dts: DataTransferService) {}
+  constructor(public dts: DataTransferService,private router:Router) {}
 
   ngOnInit(): void {}
 
@@ -23,8 +24,17 @@ export class DashboardComponent implements OnInit {
 
   }
 
+confirmbox() {
+    let text = "Are You Sure??";
+    if (confirm(text) == true) {
+      this.logout();
+    }else{
+      this.router.navigate(["/dashboard"]);
+    }
+    
+  }
+
   logout(){
-    confirm("Are You Sure?")
     localStorage.clear();
     console.log("Logged Out!!!")
   }

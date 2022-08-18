@@ -47,7 +47,7 @@ if (this.form.valid) {
     // console.log(id);
     // console.log(this.title);
 
-    this.dts.data.push({
+    this.dts.data.push({  
       id: id,
       title: this.form.value.title,
       author: this.form.value.author,

@@ -31,7 +31,7 @@
               <div class="bg-white rounded-5 shadow-5-strong p-5">
                 <div class="form-outline mb-4">
                   <span class="text-danger" *ngIf="form.controls.title.errors && form.controls.title.errors['required']">*required</span>
-                  <!-- <span class="text-danger" *ngIf="form.controls.title.errors."></span> -->
+                  <!-- <span class="text-danger" *ngIf="form.controls.title.errors && form.controls.title.errors['min3']"></span> -->
                   <input type="text" class="form-control" formControlName="title"/>
                   <!-- <span *ngIf="form.controls.title.status!=='VALID'">required</span> -->
 
