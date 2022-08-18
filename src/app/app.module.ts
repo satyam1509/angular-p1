@@ -9,6 +9,7 @@ import { AdminModule } from './admin/admin.module';
 import { NotfoundComponent } from './notfound/notfound.component';
 // import { WordcountPipe } from './wordcount.pipe';
 // import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
   
 @NgModule({
   declarations: [
@@ -19,12 +20,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
     RouterModule,
     AuthModule,
     AdminModule,
+    
     // FormsModule,
+  
    
    
   ],
