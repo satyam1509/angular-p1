@@ -14,10 +14,13 @@ export class LoginComponent implements OnInit {
   password:string="";
   constructor(private http: HttpClient,private router:Router,private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    console.log(this.username);
+  }
 
   login() {
-    // console.log({username:this.username.,
+    // console.log({username:this.username,
     //   password:this.password});
     console.log('login clicked');
     this.http
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
         },
         error: (error) => {
           console.log('error occurs', error);
+          alert("invalid username or password!!  Try Again");
         },
       });
   }
@@ -47,8 +51,8 @@ export class LoginComponent implements OnInit {
           { question: 'string', answer: 'string', botId: 'string' },
           {
             headers: {
-              Authorization: `Bearer ${userinfo.access_token}`,
-            },
+              "Authorization": `Bearer ${userinfo.access_token}`,
+            }
           }
         )
         .subscribe({

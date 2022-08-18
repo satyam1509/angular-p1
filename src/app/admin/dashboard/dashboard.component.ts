@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
   }
 
   logout(){
-
+    confirm("Are You Sure?")
     localStorage.clear();
     console.log("Logged Out!!!")
   }

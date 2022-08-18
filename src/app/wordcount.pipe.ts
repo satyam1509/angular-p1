@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class WordcountPipe implements PipeTransform {
   transform(value: any, args?: any): any {
+    // return value.length;
     return value.trim().split(/\s+/).length;
   }
 
