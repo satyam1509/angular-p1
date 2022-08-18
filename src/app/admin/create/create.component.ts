@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { variationPlacements } from '@popperjs/core';
-import { DataTransferService } from 'src/app/data-transfer.service';
+import { DataTransferService } from 'src/app/services/data-transfer.service';
 
 @Component({
   selector: 'app-create',
@@ -17,9 +17,9 @@ export class CreateComponent implements OnInit {
   // content: string = '';
 
   form= new FormGroup({
-    title:new FormControl('',[Validators.required,Validators.maxLength(20)]),
-    author:new FormControl('',[Validators.required,Validators.maxLength(15)]),
-    content:new FormControl('',[Validators.required,Validators.required,Validators.maxLength(50 )]),
+    title:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    author:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    content:new FormControl('',[Validators.required,Validators.required,Validators.minLength(3)]),
 
   })
 

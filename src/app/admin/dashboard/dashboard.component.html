@@ -19,10 +19,15 @@
         <td>{{Data.content | wordcount}}</td>
         <td> 
           <a routerLink="edit/{{Data.id}}" class="btn btn-primary btn-block" >Edit</a>
-          &nbsp;&nbsp;<button class="btn btn-primary btn-block" (click)="deletedata(Data.id)">Delete</button>
+          &nbsp;&nbsp;<button class="btn btn-danger" (click)="deletedata(Data.id)">Delete</button>
         </td> 
         </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary btn-block" routerLink="/create">Add Data</button>
+
+  <div id="btns">
+  <button class="btn btn-success btn-block mx-5" routerLink="/create">Add Data</button>
+  
+  <button id="logout" class="btn btn-danger mx-3" routerLink="/login" (click)="logout()">Log Out</button>
+</div>
 </div>

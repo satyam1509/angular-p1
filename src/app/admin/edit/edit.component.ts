@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataTransferService } from 'src/app/data-transfer.service';
+import { DataTransferService } from 'src/app/services/data-transfer.service';
 
 @Component({
   selector: 'app-edit',
@@ -18,7 +18,7 @@ export class EditComponent implements OnInit {
   editform = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
     author: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    content: new FormControl('', [Validators.required,Validators.minLength(5),]),
+    content: new FormControl('', [Validators.required,Validators.minLength(3),]),
   });
 
   constructor(

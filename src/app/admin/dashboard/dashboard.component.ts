@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { Data } from 'src/app/data';
-import { DataTransferService } from 'src/app/data-transfer.service';
+import { DataTransferService } from 'src/app/services/data-transfer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,5 +21,11 @@ export class DashboardComponent implements OnInit {
     })
 
 
+  }
+
+  logout(){
+
+    localStorage.clear();
+    console.log("Logged Out!!!")
   }
 }
