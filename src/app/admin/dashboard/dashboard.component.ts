@@ -27,15 +27,17 @@ export class DashboardComponent implements OnInit {
 confirmbox() {
     let text = "Are You Sure??";
     if (confirm(text) == true) {
-      this.logout();
+      // this.logout();
+      localStorage.clear();
+    console.log("Logged Out!!!")
     }else{
       this.router.navigate(["/dashboard"]);
     }
     
   }
 
-  logout(){
-    localStorage.clear();
-    console.log("Logged Out!!!")
-  }
+  // logout(){
+  //   localStorage.clear();
+  //   console.log("Logged Out!!!")
+  // }
 }
